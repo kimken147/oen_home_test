@@ -7,4 +7,4 @@ yarn dev
 ```
 
 ## 備註
-雖然是使用NextJS，但是沒有做Data Fetching的部分，可能與CSR差異不大
+雖然是使用NextJS，但是沒有做data fetching或者是routing，可能與CSR差異不大
