@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-function useInterval(callback: VoidFunction, delay: number) {
+function useInterval(callback: VoidFunction, delay: number | null) {
     const cachedCallback = useRef<VoidFunction>(callback);
 
     useEffect(() => {
@@ -11,8 +11,7 @@ function useInterval(callback: VoidFunction, delay: number) {
         const tick = () => {
             cachedCallback.current();
         }
-        if (delay) {
-            debugger;
+        if (delay !== null) {
             const id = setInterval(() => tick(), delay)
             return () => {
                 clearInterval(id);

@@ -4,22 +4,17 @@ import { tabIndexState } from "state/tabState";
 import { useRecoilState } from "recoil";
 import { Tabs } from "antd";
 import Timer from "components/timer";
+import StopWatch from "components/stopWatch";
 
 const TimerTab: FC = () => {
-    const [tabIndex, setTabIndex] = useRecoilState(tabIndexState);
-
-    const handleChange = (key: string) => {
-        setTabIndex(key);
-    }
-
     return (
         <div className={style["timer-container"]}>
-            <Tabs defaultActiveKey="1" onChange={handleChange} centered >
+            <Tabs defaultActiveKey="1" centered >
                 <Tabs.TabPane tab="TIMER" key="1">
                     <Timer />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="STOPWATCH" key="2">
-                    Content 2
+                    <StopWatch />
                 </Tabs.TabPane>
             </Tabs>
         </div>
